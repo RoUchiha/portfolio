@@ -1,10 +1,4 @@
 {
-  "crons": [
-    {
-      "path": "/api/digests/generate",
-      "schedule": "0 14 * * *"
-    }
-  ],
   "functions": {
     "api/digests/generate.js": {
       "maxDuration": 300

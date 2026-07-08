@@ -1,0 +1,64 @@
+name: Daily AI Digest
+
+# Reliable replacement for Vercel's Hobby-plan cron (which does not fire on time).
+# Triggers the deployed digest endpoint once every morning at 9:00 America/Chicago.
+#
+# GitHub Actions cron is UTC-only, so we can't express "9am Central" directly
+# (it shifts with daylight saving). We schedule BOTH candidate UTC times and then
+# gate on the real local hour, so exactly one run lands at 9am local year-round:
+#   - 14:00 UTC = 09:00 CDT (summer)   / 08:00 CST (winter)
+#   - 15:00 UTC = 10:00 CDT (summer)   / 09:00 CST (winter)
+# The gate below only proceeds when the local Chicago hour is 09, so the "wrong"
+# trigger for the current season is skipped automatically across the DST change.
+
+on:
+  schedule:
+    - cron: "0 14 * * *"
+    - cron: "0 15 * * *"
+  workflow_dispatch: {}   # allow manual runs from the Actions tab (always proceed)
+
+permissions: {}           # this workflow needs no repository access
+
+concurrency:
+  group: daily-digest
+  cancel-in-progress: false
+
+jobs:
+  send-digest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: DST-safe 9am gate
+        id: gate
+        run: |
+          HOUR=$(TZ="America/Chicago" date +%H)
+          echo "America/Chicago hour is $HOUR (event: $GITHUB_EVENT_NAME)"
+          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ] || [ "$HOUR" = "09" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Not 9am Central for this trigger — skipping."
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Trigger digest generation
+        if: steps.gate.outputs.run == 'true'
+        env:
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+        run: |
+          if [ -z "$CRON_SECRET" ]; then
+            echo "::error::CRON_SECRET secret is not set in repo Settings → Secrets → Actions"
+            exit 1
+          fi
+          code=$(curl -sS -o /tmp/resp.json -w "%{http_code}" \
+            --max-time 300 \
+            -X POST "https://portfolio-nine-swart-38.vercel.app/api/digests/generate" \
+            -H "x-cron-secret: $CRON_SECRET" \
+            -H "content-type: application/json" \
+            -d '{}')
+          echo "HTTP $code"
+          cat /tmp/resp.json || true
+          echo
+          if [ "$code" != "200" ]; then
+            echo "::error::Digest generation failed (HTTP $code)"
+            exit 1
+          fi
+          echo "Digest trigger succeeded."
