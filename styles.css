@@ -565,6 +565,128 @@ footer {
   transform: translateY(0);
 }
 
+.digest-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.digest-card {
+  background: rgba(247, 250, 246, 0.07);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 180ms ease, background 180ms ease;
+}
+
+.digest-card.is-expanded,
+.digest-card:hover {
+  border-color: rgba(69, 214, 193, 0.42);
+  background: rgba(247, 250, 246, 0.1);
+}
+
+.digest-card-header {
+  display: grid;
+  grid-template-columns: 150px 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem 1.15rem;
+  color: var(--text);
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.digest-date {
+  color: var(--mint);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.digest-title {
+  font-weight: 700;
+  font-size: 1.02rem;
+}
+
+.digest-chevron {
+  width: 1.1rem;
+  height: 1.1rem;
+  color: var(--muted);
+  transition: transform 220ms ease;
+}
+
+.digest-card-header[aria-expanded="true"] .digest-chevron {
+  transform: rotate(180deg);
+  color: var(--teal);
+}
+
+.digest-body {
+  padding: 0 1.15rem 1.25rem;
+  color: #d2ded9;
+}
+
+.digest-body h3,
+.digest-body h4 {
+  margin: 1rem 0 0.5rem;
+  color: var(--text);
+}
+
+.digest-body h3:first-child,
+.digest-body h4:first-child {
+  margin-top: 0;
+}
+
+.digest-body p {
+  margin: 0 0 0.75rem;
+  line-height: 1.6;
+}
+
+.digest-body ul {
+  margin: 0 0 0.75rem;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.digest-body a {
+  color: var(--mint);
+  border-bottom: 1px solid rgba(185, 246, 223, 0.4);
+}
+
+.digest-sources-label {
+  margin: 1rem 0 0.4rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.digest-sources {
+  display: grid;
+  gap: 0.3rem;
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.digest-status {
+  margin: 1rem 0 0;
+  color: var(--muted);
+}
+
+.digest-status:empty {
+  display: none;
+}
+
+.digest-load-more {
+  margin-top: 1.25rem;
+}
+
 @media (max-width: 980px) {
   .metrics,
   .project-grid,
@@ -639,6 +761,15 @@ footer {
 
   .button,
   .contact-actions a {
+    width: 100%;
+  }
+
+  .digest-card-header {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+
+  .digest-load-more {
     width: 100%;
   }
 }

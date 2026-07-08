@@ -21,6 +21,7 @@
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#work">Work</a>
         <a href="#projects">Projects</a>
+        <a href="#ai-digest">AI Digest</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -371,6 +372,21 @@
         </div>
       </section>
 
+      <section class="section digest-section" id="ai-digest" aria-labelledby="digest-title">
+        <div class="section-heading" data-reveal>
+          <p class="section-kicker">Daily AI digest</p>
+          <h2 id="digest-title">The forefront of AI, summarized every morning.</h2>
+          <p class="section-note">
+            An automated pipeline researches AI breakthroughs each day, writes a plain-English digest with
+            cited sources, and emails it out at 9am. Newest first - click a day to expand it.
+          </p>
+        </div>
+
+        <div class="digest-list" id="digest-list" data-reveal></div>
+        <p class="digest-status" id="digest-status" role="status"></p>
+        <button class="button digest-load-more" id="digest-load-more" type="button">Load older days</button>
+      </section>
+
       <section class="section skills-section" id="skills" aria-labelledby="skills-title">
         <div class="section-heading" data-reveal>
           <p class="section-kicker">Toolkit</p>
@@ -449,5 +465,6 @@
     </footer>
 
     <script src="./script.js"></script>
+    <script src="./assets/js/digest.js" defer></script>
   </body>
 </html>

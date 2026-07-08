@@ -1,0 +1,9 @@
+.git
+.claude
+scripts
+sql
+.env
+.env.*
+*.log
+cj.txt
+README.md
