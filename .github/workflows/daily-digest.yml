@@ -1,23 +1,32 @@
 name: Daily AI Digest
 
 # Reliable replacement for Vercel's Hobby-plan cron (which does not fire on time).
-# Triggers the deployed digest endpoint once every morning at 9:00 America/Chicago.
+# Triggers the deployed digest endpoint every morning at ~9:00 America/Chicago.
 #
-# GitHub Actions cron is UTC-only, so we can't express "9am Central" directly
-# (it shifts with daylight saving). We schedule BOTH candidate UTC times and then
-# gate on the real local hour, so exactly one run lands at 9am local year-round:
-#   - 14:00 UTC = 09:00 CDT (summer)   / 08:00 CST (winter)
-#   - 15:00 UTC = 10:00 CDT (summer)   / 09:00 CST (winter)
-# The gate below only proceeds when the local Chicago hour is 09, so the "wrong"
-# trigger for the current season is skipped automatically across the DST change.
+# GitHub Actions cron is UTC-only AND best-effort: runs can be delayed well past
+# the scheduled minute (on 2026-07-09 the 14:00/15:00 UTC triggers ran at 16:30
+# and 17:23 UTC). So this workflow is designed for guaranteed delivery rather
+# than exact timing:
+#
+#   - Three staggered triggers (14:07, 15:07, 16:07 UTC) at an off-hour minute
+#     to avoid the congested on-the-hour slots.
+#   - The gate proceeds whenever the America/Chicago hour is >= 9, so a delayed
+#     run still delivers (never silently skips the day).
+#   - In winter (CST), 14:07 UTC = 8:07 local -> gate skips it; 15:07 UTC = 9:07
+#     local generates. In summer (CDT), 14:07 UTC = 9:07 local generates. This
+#     keeps the send at/after 9am local year-round across DST changes.
+#   - Duplicate protection: the endpoint is idempotent (returns already_exists
+#     once the day's row is stored, without re-sending email), and the
+#     concurrency group serializes overlapping runs so two triggers can't race.
 
 on:
   schedule:
-    - cron: "0 14 * * *"
-    - cron: "0 15 * * *"
-  workflow_dispatch: {}   # allow manual runs from the Actions tab (always proceed)
+    - cron: "7 14 * * *"   # 9:07am CDT (summer) / 8:07am CST (winter, gated off)
+    - cron: "7 15 * * *"   # 10:07am CDT (no-op, already sent) / 9:07am CST (winter send)
+    - cron: "7 16 * * *"   # backstop if an earlier trigger was dropped/delayed
+  workflow_dispatch: {}    # manual runs from the Actions tab (always proceed)
 
-permissions: {}           # this workflow needs no repository access
+permissions: {}            # this workflow needs no repository access
 
 concurrency:
   group: daily-digest
@@ -27,15 +36,15 @@ jobs:
   send-digest:
     runs-on: ubuntu-latest
     steps:
-      - name: DST-safe 9am gate
+      - name: 9am-Central gate (DST- and delay-safe)
         id: gate
         run: |
-          HOUR=$(TZ="America/Chicago" date +%H)
+          HOUR=$(TZ="America/Chicago" date +%-H)
           echo "America/Chicago hour is $HOUR (event: $GITHUB_EVENT_NAME)"
-          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ] || [ "$HOUR" = "09" ]; then
+          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ] || [ "$HOUR" -ge 9 ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
           else
-            echo "Not 9am Central for this trigger — skipping."
+            echo "Before 9am Central (winter early trigger) — skipping."
             echo "run=false" >> "$GITHUB_OUTPUT"
           fi
 
