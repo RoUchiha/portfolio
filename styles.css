@@ -536,10 +536,6 @@ footer {
   content: "Live";
 }
 
-.project-topline a.private-repo::after {
-  content: "GitHub · private";
-}
-
 .project-topline a:hover,
 .project-topline a:focus-visible {
   color: var(--ink);
