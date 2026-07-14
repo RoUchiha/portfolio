@@ -497,14 +497,20 @@ footer {
 
 .project-links {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 0.4rem;
 }
 
 .project-topline a {
-  display: grid;
-  width: 2.25rem;
+  display: inline-flex;
+  width: auto;
+  min-width: 2.25rem;
   height: 2.25rem;
-  place-items: center;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0 0.65rem;
   color: var(--text);
   background: rgba(245, 248, 242, 0.08);
   border: 1px solid var(--line);
@@ -513,6 +519,25 @@ footer {
     border-color 180ms ease,
     background 180ms ease,
     color 180ms ease;
+}
+
+.project-topline a::after {
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.project-topline a[href*="github.com"]::after {
+  content: "GitHub";
+}
+
+.project-topline a:not([href*="github.com"])::after {
+  content: "Live";
+}
+
+.project-topline a.private-repo::after {
+  content: "GitHub · private";
 }
 
 .project-topline a:hover,
