@@ -323,6 +323,44 @@ footer {
   margin: 0;
 }
 
+.capability-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  overflow: hidden;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.capability-board article {
+  display: grid;
+  min-height: 230px;
+  align-content: start;
+  gap: 0.7rem;
+  padding: 1.25rem;
+  background:
+    linear-gradient(145deg, rgba(69, 214, 193, 0.08), transparent 52%),
+    rgba(10, 23, 21, 0.9);
+}
+
+.capability-board article > span {
+  color: var(--amber);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.capability-board h3 {
+  margin: 0;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+}
+
+.capability-board p {
+  margin: 0;
+  color: #cedbd5;
+}
+
 .section-heading {
   display: grid;
   max-width: 850px;
@@ -392,6 +430,30 @@ footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+}
+
+.project-group-heading {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.25rem 0 0.4rem;
+}
+
+.project-group-heading.secondary {
+  margin-top: clamp(2rem, 5vw, 4rem);
+}
+
+.project-group-heading .section-kicker,
+.project-group-heading h3 {
+  margin: 0;
+}
+
+.project-group-heading h3 {
+  color: var(--text);
+  font-size: clamp(1.35rem, 2.6vw, 2rem);
+  text-align: right;
 }
 
 .project-card {
@@ -690,6 +752,7 @@ footer {
 @media (max-width: 980px) {
   .metrics,
   .project-grid,
+  .capability-board,
   .skill-board,
   .education-list {
     grid-template-columns: repeat(2, 1fr);
@@ -743,6 +806,7 @@ footer {
 
   .metrics,
   .project-grid,
+  .capability-board,
   .skill-board,
   .education-list {
     grid-template-columns: 1fr;
@@ -750,6 +814,14 @@ footer {
 
   .project-card.featured {
     grid-column: auto;
+  }
+
+  .project-group-heading {
+    display: grid;
+  }
+
+  .project-group-heading h3 {
+    text-align: left;
   }
 
   .hero-actions,
