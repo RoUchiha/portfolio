@@ -34,9 +34,10 @@ Hosted on Vercel. Pushing to `main` triggers a production deploy.
 
 ## Featured projects
 
-The projects section leads with recent applied-AI and product work: Hallucination
-Guard, Gate Guide, SilverStay CareHub, MotoBox, AuditLens, and Twist.e. It also
-showcases production-shaped LLM infrastructure including Agent Orchestration,
-Text-to-SQL Guardrails, LLM Cost Router, RAG with Citations, Semantic Cache, and
-Multi-Agent Critique. Most ship with live demos. See the
-[AI/ML portfolio monorepo](https://github.com/RoUchiha/ai-ml-portfolio).
+Projects are ordered by overall product quality, technical depth, real-world usefulness,
+security and validation discipline, and demo value. The showcase leads with LocalForge,
+Agentic Systems Lab, Hallucination Guard, NEXUS AI Project Manager, Gate Guide, MotoBox,
+SilverStay CareHub, Twist.e, NBA God Squad, NFL God Squad, and AuditLens. Focused AI
+reliability and infrastructure projects follow in a separate engineering-depth group.
+Every project card links to its public RoUchiha repository, with a separate Live action
+when an unauthenticated public demo is available.
