@@ -188,9 +188,40 @@
 
         <div class="project-grid">
           <div class="project-group-heading" data-reveal>
-            <p class="section-kicker">Newest work</p>
-            <h3>Applied AI and product builds</h3>
+            <p class="section-kicker">Flagship systems</p>
+            <h3>Applied AI products and platforms</h3>
           </div>
+
+          <article class="project-card featured" data-reveal>
+            <div class="project-topline">
+              <span>Local model lifecycle</span>
+              <div class="project-links">
+                <a href="https://localforge-studio.rosingh95.chatgpt.site" target="_blank" rel="noreferrer" aria-label="Open LocalForge live product tour">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-14 9V3z" /></svg>
+                </a>
+                <a href="https://github.com/RoUchiha/localforge" target="_blank" rel="noreferrer" aria-label="Open LocalForge repository on GitHub">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7" /><path d="M7 7h10v10" /></svg>
+                </a>
+              </div>
+            </div>
+            <h3>LocalForge</h3>
+            <p>A local-first model workshop that turns a natural-language goal into a typed training plan, audits private datasets, creates LoRA or QLoRA recipes, runs tracked tuning jobs, enforces evaluation gates, and packages reproducible releases for Ollama, vLLM, GGUF, or adapter deployment.</p>
+            <div class="tags"><span class="live">Product tour</span><span>local-first</span><span>LoRA / QLoRA</span><span>evaluation gates</span><span>reproducible releases</span></div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="project-topline">
+              <span>Enterprise agent engineering</span>
+              <div class="project-links">
+                <a href="https://github.com/RoUchiha/agentic-ai-engineering-lab" target="_blank" rel="noreferrer" aria-label="Open Agentic Systems Lab repository on GitHub">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7" /><path d="M7 7h10v10" /></svg>
+                </a>
+              </div>
+            </div>
+            <h3>Agentic Systems Lab</h3>
+            <p>An inspectable enterprise agent system with three bounded workflows, RAG, executable policy gates, human approvals, golden-case evaluations, a typed Next.js runtime, a FastAPI reference service, and three provisioned Grafana observability projects.</p>
+            <div class="tags"><span>bounded agents</span><span>RAG + policy</span><span>human approval</span><span>Grafana SLOs</span><span>TypeScript + Python</span></div>
+          </article>
 
           <article class="project-card featured" data-reveal>
             <div class="project-topline">
@@ -204,6 +235,23 @@
             <h3>Hallucination Guard</h3>
             <p>A provider-independent safety layer that checks every generated claim against source material, calculates risk, and returns an actionable accept, retry, block, or review decision. High-risk answers can automatically regenerate with claim-level correction feedback.</p>
             <div class="tags"><span>Pipeline-ready</span><span>FastAPI</span><span>NLI + LLM judge</span><span>policy controls</span><span>secure API</span></div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="project-topline">
+              <span>Agent UI</span>
+              <div class="project-links">
+                <a href="https://nexus-pm-six.vercel.app/?demo=1" target="_blank" rel="noreferrer" aria-label="Open NEXUS AI Project Manager live demo">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-14 9V3z" /></svg>
+                </a>
+                <a href="https://github.com/RoUchiha/nexus-pm" target="_blank" rel="noreferrer" aria-label="Open NEXUS AI Project Manager repository on GitHub">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7" /><path d="M7 7h10v10" /></svg>
+                </a>
+              </div>
+            </div>
+            <h3>NEXUS AI Project Manager</h3>
+            <p>Autonomous multi-agent orchestration UI with real-time pod communication, GitHub integration, and Ollama discovery.</p>
+            <div class="tags"><span class="live">Live demo</span><span>Multi-agent</span><span>GitHub</span><span>Ollama</span></div>
           </article>
 
           <article class="project-card" data-reveal>
@@ -225,23 +273,6 @@
 
           <article class="project-card" data-reveal>
             <div class="project-topline">
-              <span>Healthcare workflow</span>
-              <div class="project-links">
-                <a href="https://silverstay-carehub.vercel.app" target="_blank" rel="noreferrer" aria-label="Open SilverStay CareHub live demo">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-14 9V3z" /></svg>
-                </a>
-                <a href="https://github.com/RoUchiha/silverstay-carehub" target="_blank" rel="noreferrer" aria-label="Open SilverStay CareHub repository on GitHub">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7" /><path d="M7 7h10v10" /></svg>
-                </a>
-              </div>
-            </div>
-            <h3>SilverStay CareHub</h3>
-            <p>A complex-discharge command center that structures messy patient barriers, ranks providers by explainable fit, preserves a shared decision trail, and drafts human-reviewed family and provider communication.</p>
-            <div class="tags"><span class="live">Live demo</span><span>workflow design</span><span>explainable matching</span><span>human review</span></div>
-          </article>
-
-          <article class="project-card" data-reveal>
-            <div class="project-topline">
               <span>Safety &amp; incident data</span>
               <div class="project-links">
                 <a href="https://motobox-demo.vercel.app" target="_blank" rel="noreferrer" aria-label="Open MotoBox live demo">
@@ -259,16 +290,19 @@
 
           <article class="project-card" data-reveal>
             <div class="project-topline">
-              <span>Agentic compliance</span>
+              <span>Healthcare workflow</span>
               <div class="project-links">
-                <a href="https://github.com/RoUchiha/kaggle-5day-ai-agents" target="_blank" rel="noreferrer" aria-label="Open AuditLens on GitHub">
+                <a href="https://silverstay-carehub.vercel.app" target="_blank" rel="noreferrer" aria-label="Open SilverStay CareHub live demo">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-14 9V3z" /></svg>
+                </a>
+                <a href="https://github.com/RoUchiha/silverstay-carehub" target="_blank" rel="noreferrer" aria-label="Open SilverStay CareHub repository on GitHub">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7" /><path d="M7 7h10v10" /></svg>
                 </a>
               </div>
             </div>
-            <h3>AuditLens</h3>
-            <p>A multi-agent expense-compliance capstone that converts policy-heavy review work into an auditable workflow using specialized agents, shared tools, security controls, and an evaluation harness.</p>
-            <div class="tags"><span>Google ADK</span><span>MCP</span><span>agent skills</span><span>eval harness</span></div>
+            <h3>SilverStay CareHub</h3>
+            <p>A complex-discharge command center that structures messy patient barriers, ranks providers by explainable fit, preserves a shared decision trail, and drafts human-reviewed family and provider communication.</p>
+            <div class="tags"><span class="live">Live demo</span><span>workflow design</span><span>explainable matching</span><span>human review</span></div>
           </article>
 
           <article class="project-card" data-reveal>
@@ -288,8 +322,56 @@
             <div class="tags"><span class="live">Live app</span><span>OpenStreetMap</span><span>route scoring</span><span>consumer UX</span></div>
           </article>
 
+          <article class="project-card" data-reveal>
+            <div class="project-topline">
+              <span>Sports game</span>
+              <div class="project-links">
+                <a href="https://nba-god-squad.vercel.app" target="_blank" rel="noreferrer" aria-label="Open NBA God Squad live app">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-14 9V3z" /></svg>
+                </a>
+                <a href="https://github.com/RoUchiha/god-squad-nba" target="_blank" rel="noreferrer" aria-label="Open NBA God Squad repository on GitHub">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7" /><path d="M7 7h10v10" /></svg>
+                </a>
+              </div>
+            </div>
+            <h3>NBA God Squad</h3>
+            <p>All-time NBA roster draft game - pick players across 43 curated historical eras, score your lineup with a custom GSPR power rating (chemistry and duo bonuses included), and see if your squad can go 82-0.</p>
+            <div class="tags"><span class="live">Live app</span><span>Next.js 14</span><span>TypeScript</span><span>GSPR algorithm</span></div>
+          </article>
+
+          <article class="project-card compact" data-reveal>
+            <div class="project-topline">
+              <span>Sports game</span>
+              <div class="project-links">
+                <a href="https://nfl-god-squad.vercel.app" target="_blank" rel="noreferrer" aria-label="Open NFL God Squad live app">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-14 9V3z" /></svg>
+                </a>
+                <a href="https://github.com/RoUchiha/nfl-god-squad" target="_blank" rel="noreferrer" aria-label="Open NFL God Squad repository on GitHub">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7" /><path d="M7 7h10v10" /></svg>
+                </a>
+              </div>
+            </div>
+            <h3>NFL God Squad</h3>
+            <p>All-time NFL roster builder with rarity-weighted historical team eras, trusted server-side roster data, and a 17-game season simulation.</p>
+            <div class="tags"><span class="live">Live app</span><span>Next.js</span><span>simulation integrity</span></div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="project-topline">
+              <span>Agentic compliance</span>
+              <div class="project-links">
+                <a href="https://github.com/RoUchiha/kaggle-5day-ai-agents" target="_blank" rel="noreferrer" aria-label="Open AuditLens on GitHub">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7" /><path d="M7 7h10v10" /></svg>
+                </a>
+              </div>
+            </div>
+            <h3>AuditLens</h3>
+            <p>A multi-agent expense-compliance capstone that converts policy-heavy review work into an auditable workflow using specialized agents, shared tools, security controls, and an evaluation harness.</p>
+            <div class="tags"><span>Google ADK</span><span>MCP</span><span>agent skills</span><span>eval harness</span></div>
+          </article>
+
           <div class="project-group-heading secondary" data-reveal>
-            <p class="section-kicker">Deeper toolkit</p>
+            <p class="section-kicker">Engineering depth</p>
             <h3>AI reliability and infrastructure</h3>
           </div>
 
@@ -329,6 +411,23 @@
 
           <article class="project-card" data-reveal>
             <div class="project-topline">
+              <span>RAG</span>
+              <div class="project-links">
+                <a href="https://huggingface.co/spaces/rosingh/ai-ml-portfolio-demos" target="_blank" rel="noreferrer" aria-label="Open RAG with Citations live demo">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-14 9V3z" /></svg>
+                </a>
+                <a href="https://github.com/RoUchiha/rag-citations" target="_blank" rel="noreferrer" aria-label="Open RAG with Citations on GitHub">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7" /><path d="M7 7h10v10" /></svg>
+                </a>
+              </div>
+            </div>
+            <h3>RAG with Citations</h3>
+            <p>Hybrid dense + BM25 retrieval (RRF-fused) with verified citations - hallucinated references are stripped before output, plus an explicit no-answer path.</p>
+            <div class="tags"><span class="live">Live demo</span><span>hybrid + RRF</span><span>verified cites</span><span>95% cov</span></div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="project-topline">
               <span>Cost control</span>
               <div class="project-links">
                 <a href="https://huggingface.co/spaces/rosingh/ai-ml-portfolio-demos" target="_blank" rel="noreferrer" aria-label="Open LLM Cost Router live demo">
@@ -346,19 +445,19 @@
 
           <article class="project-card" data-reveal>
             <div class="project-topline">
-              <span>RAG</span>
+              <span>Multi-agent</span>
               <div class="project-links">
-                <a href="https://huggingface.co/spaces/rosingh/ai-ml-portfolio-demos" target="_blank" rel="noreferrer" aria-label="Open RAG with Citations live demo">
+                <a href="https://huggingface.co/spaces/rosingh/ai-ml-portfolio-demos" target="_blank" rel="noreferrer" aria-label="Open Multi-Agent Critique live demo">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-14 9V3z" /></svg>
                 </a>
-                <a href="https://github.com/RoUchiha/rag-citations" target="_blank" rel="noreferrer" aria-label="Open RAG with Citations on GitHub">
+                <a href="https://github.com/RoUchiha/multiagent-critique" target="_blank" rel="noreferrer" aria-label="Open Multi-Agent Critique on GitHub">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7" /><path d="M7 7h10v10" /></svg>
                 </a>
               </div>
             </div>
-            <h3>RAG with Citations</h3>
-            <p>Hybrid dense + BM25 retrieval (RRF-fused) with verified citations - hallucinated references are stripped before output, plus an explicit no-answer path.</p>
-            <div class="tags"><span class="live">Live demo</span><span>hybrid + RRF</span><span>verified cites</span><span>95% cov</span></div>
+            <h3>Multi-Agent Critique</h3>
+            <p>Evaluator-optimizer loop: a generator plus parallel critics iterate against a rubric until quality passes, with routing and human-in-the-loop review.</p>
+            <div class="tags"><span class="live">Live demo</span><span>evaluator-optimizer</span><span>parallel critics</span><span>HITL</span></div>
           </article>
 
           <article class="project-card" data-reveal>
@@ -380,19 +479,30 @@
 
           <article class="project-card" data-reveal>
             <div class="project-topline">
-              <span>Multi-agent</span>
+              <span>Red team</span>
               <div class="project-links">
-                <a href="https://huggingface.co/spaces/rosingh/ai-ml-portfolio-demos" target="_blank" rel="noreferrer" aria-label="Open Multi-Agent Critique live demo">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-14 9V3z" /></svg>
-                </a>
-                <a href="https://github.com/RoUchiha/multiagent-critique" target="_blank" rel="noreferrer" aria-label="Open Multi-Agent Critique on GitHub">
+                <a href="https://github.com/RoUchiha/llm-red-teaming" target="_blank" rel="noreferrer" aria-label="Open LLM Red-Teaming Harness on GitHub">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7" /><path d="M7 7h10v10" /></svg>
                 </a>
               </div>
             </div>
-            <h3>Multi-Agent Critique</h3>
-            <p>Evaluator-optimizer loop: a generator plus parallel critics iterate against a rubric until quality passes, with routing and human-in-the-loop review.</p>
-            <div class="tags"><span class="live">Live demo</span><span>evaluator-optimizer</span><span>parallel critics</span><span>HITL</span></div>
+            <h3>LLM Red-Teaming Harness</h3>
+            <p>Automated safety evaluation across 13+ adversarial templates and five attack categories with tiered reporting.</p>
+            <div class="tags"><span>Prompt injection</span><span>risk tiers</span><span>cost control</span></div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="project-topline">
+              <span>CI/CD guardrails</span>
+              <div class="project-links">
+                <a href="https://github.com/RoUchiha/prompt-regression" target="_blank" rel="noreferrer" aria-label="Open Prompt Regression Testing on GitHub">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7" /><path d="M7 7h10v10" /></svg>
+                </a>
+              </div>
+            </div>
+            <h3>Prompt Regression Testing</h3>
+            <p>Seven assertion types for prompt changes, schema checks, LLM judge gates, latency, and semantic drift.</p>
+            <div class="tags"><span>GitHub Actions</span><span>JSON schema</span><span>baseline drift</span></div>
           </article>
 
           <article class="project-card" data-reveal>
@@ -421,98 +531,6 @@
             <h3>G-Eval Judge</h3>
             <p>YAML-driven rubric engine with weighted 0-1 scoring and parallel dimension evaluation through asyncio.</p>
             <div class="tags"><span>YAML rubrics</span><span>asyncio</span><span>LLM judge</span></div>
-          </article>
-
-          <article class="project-card" data-reveal>
-            <div class="project-topline">
-              <span>CI/CD guardrails</span>
-              <div class="project-links">
-                <a href="https://github.com/RoUchiha/prompt-regression" target="_blank" rel="noreferrer" aria-label="Open Prompt Regression Testing on GitHub">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7" /><path d="M7 7h10v10" /></svg>
-                </a>
-              </div>
-            </div>
-            <h3>Prompt Regression Testing</h3>
-            <p>Seven assertion types for prompt changes, schema checks, LLM judge gates, latency, and semantic drift.</p>
-            <div class="tags"><span>GitHub Actions</span><span>JSON schema</span><span>baseline drift</span></div>
-          </article>
-
-          <article class="project-card" data-reveal>
-            <div class="project-topline">
-              <span>Red team</span>
-              <div class="project-links">
-                <a href="https://github.com/RoUchiha/llm-red-teaming" target="_blank" rel="noreferrer" aria-label="Open LLM Red-Teaming Harness on GitHub">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7" /><path d="M7 7h10v10" /></svg>
-                </a>
-              </div>
-            </div>
-            <h3>LLM Red-Teaming Harness</h3>
-            <p>Automated safety evaluation across 13+ adversarial templates and five attack categories with tiered reporting.</p>
-            <div class="tags"><span>Prompt injection</span><span>risk tiers</span><span>cost control</span></div>
-          </article>
-
-          <article class="project-card" data-reveal>
-            <div class="project-topline">
-              <span>Agent UI</span>
-              <div class="project-links">
-                <a href="https://nexus-pm-six.vercel.app/?demo=1" target="_blank" rel="noreferrer" aria-label="Open NEXUS AI Project Manager live demo">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-14 9V3z" /></svg>
-                </a>
-                <a href="https://github.com/RoUchiha/nexus-pm" target="_blank" rel="noreferrer" aria-label="Open NEXUS AI Project Manager repository on GitHub">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7" /><path d="M7 7h10v10" /></svg>
-                </a>
-              </div>
-            </div>
-            <h3>NEXUS AI Project Manager</h3>
-            <p>Autonomous multi-agent orchestration UI with real-time pod communication, GitHub integration, and Ollama discovery.</p>
-            <div class="tags"><span class="live">Live demo</span><span>Multi-agent</span><span>GitHub</span><span>Ollama</span></div>
-          </article>
-
-          <article class="project-card" data-reveal>
-            <div class="project-topline">
-              <span>Sports game</span>
-              <div class="project-links">
-                <a href="https://nba-god-squad.vercel.app" target="_blank" rel="noreferrer" aria-label="Open NBA God Squad live app">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-14 9V3z" /></svg>
-                </a>
-                <a href="https://github.com/RoUchiha/god-squad-nba" target="_blank" rel="noreferrer" aria-label="Open NBA God Squad repository on GitHub">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7" /><path d="M7 7h10v10" /></svg>
-                </a>
-              </div>
-            </div>
-            <h3>NBA God Squad</h3>
-            <p>All-time NBA roster draft game - pick players across 43 curated historical eras, score your lineup with a custom GSPR power rating (chemistry and duo bonuses included), and see if your squad can go 82-0.</p>
-            <div class="tags"><span class="live">Live app</span><span>Next.js 14</span><span>TypeScript</span><span>GSPR algorithm</span></div>
-          </article>
-
-          <article class="project-card compact" data-reveal>
-            <div class="project-topline">
-              <span>Risk analysis</span>
-              <div class="project-links">
-                <a href="https://github.com/RoUchiha/fb-vehicle-search" target="_blank" rel="noreferrer" aria-label="Open FB Vehicle Search repository on GitHub">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7" /><path d="M7 7h10v10" /></svg>
-                </a>
-              </div>
-            </div>
-            <h3>FB Vehicle Search</h3>
-            <p>Marketplace search with recall checks, theft lookups, and streaming Claude risk analysis.</p>
-          </article>
-
-          <article class="project-card compact" data-reveal>
-            <div class="project-topline">
-              <span>Sports game</span>
-              <div class="project-links">
-                <a href="https://nfl-god-squad.vercel.app" target="_blank" rel="noreferrer" aria-label="Open NFL God Squad live app">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-14 9V3z" /></svg>
-                </a>
-                <a href="https://github.com/RoUchiha/nfl-god-squad" target="_blank" rel="noreferrer" aria-label="Open NFL God Squad repository on GitHub">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7" /><path d="M7 7h10v10" /></svg>
-                </a>
-              </div>
-            </div>
-            <h3>NFL God Squad</h3>
-            <p>All-time NFL roster builder with rarity-weighted historical team eras, trusted server-side roster data, and a 17-game season simulation.</p>
-            <div class="tags"><span class="live">Live app</span><span>Next.js</span><span>simulation integrity</span></div>
           </article>
         </div>
       </section>
