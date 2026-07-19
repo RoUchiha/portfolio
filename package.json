@@ -5,7 +5,8 @@
   "description": "Roshaan Singh portfolio site with a daily AI research digest feature",
   "scripts": {
     "local-preview": "vercel dev --yes --listen 3000",
-    "backfill": "node scripts/backfill-digests.js"
+    "backfill": "node scripts/backfill-digests.js",
+    "test:portfolio": "node scripts/validate-portfolio.cjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.110.0",
